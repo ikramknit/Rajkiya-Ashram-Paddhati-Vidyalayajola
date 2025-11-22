@@ -479,7 +479,7 @@ const Facilities: React.FC = () => {
     },
     {
       title: language === 'en' ? 'Mess' : 'मेस व्यवस्था',
-      desc: language === 'en' 
+      desc: language === 'en 
         ? 'Nutritious food served in a dining hall with a focus on hygiene and table manners.' 
         : 'स्वच्छता और टेबल शिष्टाचार पर ध्यान देने के साथ डाइनिंग हॉल में पौष्टिक भोजन परोसा जाता है।',
       icon: <Utensils className="w-6 h-6" />,
