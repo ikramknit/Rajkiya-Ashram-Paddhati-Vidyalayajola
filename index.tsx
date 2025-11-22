@@ -4,7 +4,7 @@ import { HashRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { Menu, X, GraduationCap, Globe, Phone, Mail, MapPin, ArrowRight, BookOpen, Users, Trophy, Monitor, Utensils, Book, FlaskConical, Home as HomeIcon, Trees } from 'lucide-react';
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 
-// --- Types ---
+// --- 1. Types ---
 
 type Language = 'en' | 'hi';
 
@@ -49,7 +49,7 @@ interface Content {
   };
 }
 
-// --- Constants ---
+// --- 2. Constants & Data ---
 
 const CONTENT: Record<'en' | 'hi', Content> = {
   en: {
@@ -145,7 +145,7 @@ const FACILITY_IMAGES = {
   plantation: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=800&auto=format&fit=crop",
 };
 
-// --- Context ---
+// --- 3. Context ---
 
 interface LanguageContextType {
   language: Language;
@@ -157,7 +157,7 @@ const LanguageContext = createContext<LanguageContextType>({
   setLanguage: () => {},
 });
 
-// --- Components ---
+// --- 4. Components ---
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { language, setLanguage } = useContext(LanguageContext);
@@ -327,7 +327,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   );
 };
 
-// --- Pages ---
+// --- 5. Pages ---
 
 const Home: React.FC = () => {
   const { language } = useContext(LanguageContext);
@@ -471,7 +471,7 @@ const Facilities: React.FC = () => {
     },
     {
       title: language === 'en' ? 'Hostel Facilities' : 'आवासीय व्यवस्था',
-      desc: language === 'en 
+      desc: language === 'en' 
         ? 'Separate residential facilities for boys with a capacity of 490 students.' 
         : '490 छात्रों की क्षमता वाले लड़कों के लिए अलग आवासीय सुविधाएं।',
       icon: <HomeIcon className="w-6 h-6" />,
@@ -714,7 +714,7 @@ const Gallery: React.FC = () => {
   );
 };
 
-// --- App Entry ---
+// --- 6. App Entry ---
 
 const App: React.FC = () => {
   const [language, setLanguage] = useState<Language>('en');
